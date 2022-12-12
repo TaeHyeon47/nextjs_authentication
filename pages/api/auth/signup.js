@@ -1,6 +1,10 @@
 import {connectToDatabase} from "../../../lib/db";
 
 async function handler(req, res) {
+    if (req.method !== 'POST') {
+        return;
+    }
+
   const data = req.body;
   const { email, password} = data;
 
